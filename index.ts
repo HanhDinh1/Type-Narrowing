@@ -5,7 +5,7 @@ function triple (value: number | string) {
     }
     return value *3
 }
-//Truthiness Guard
+//Truthiness Guards
 const el = document.getElementById("idk")
 if(el){
     el
@@ -14,12 +14,21 @@ if(el){
 }
 
 const printLetters = (word?: string) => {
-    if(word){
+    if(word) {
         for(let char of word){
             console.log(char);
         }
     }
     else {
-        console.log("YOU DID NOT PASS IN A WORD")
+        word
+        console.log("YOU DID NOT PASS IN A WORD");
     }
 };
+
+// Equality Narrowing
+function someDemo (x: string | number, y: string | boolean){
+    if (x === y){
+        x.toUpperCase()
+    }
+}
+someDemo(3, "3");
