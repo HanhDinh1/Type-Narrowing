@@ -5,3 +5,21 @@ function triple (value: number | string) {
     }
     return value *3
 }
+//Truthiness Guard
+const el = document.getElementById("idk")
+if(el){
+    el
+} else {
+    el
+}
+
+const printLetters = (word?: string) => {
+    if(word){
+        for(let char of word){
+            console.log(char);
+        }
+    }
+    else {
+        console.log("YOU DID NOT PASS IN A WORD")
+    }
+};
