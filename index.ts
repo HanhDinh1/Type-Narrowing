@@ -32,3 +32,25 @@ function someDemo (x: string | number, y: string | boolean){
     }
 }
 someDemo(3, "3");
+
+// Narrowing with the In Operator
+interface Movie {
+    title: string;
+    duration: number;
+}
+
+interface TVShow {
+    title: string;
+    numEpisodes: number;
+    episodeDuration: number;
+}
+
+function getRunTime (media: Movie | TVShow){
+    if ("numEpisodes" in media){
+        return media.numEpisodes * media.episodeDuration
+    }
+    return media.duration;
+}
+
+getRunTime ({title: "Amadeus", duration: 140});
+getRunTime ({title: "Spongebob", numEpisodes: 80, episodeDuration:80});
